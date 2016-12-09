@@ -17,12 +17,12 @@
 #include <sys/stat.h>
 #include <iomanip>
 
-#include "display.h"
-#include "gui.h"
-#include "graphics.h"
-#include "spectrum.h"
-#include "info.h"
-#include "config.h"
+#include "headers/display.h"
+#include "headers/gui.h"
+#include "headers/graphics.h"
+#include "headers/spectrum.h"
+#include "headers/info.h"
+#include "headers/config.h"
 
 
 

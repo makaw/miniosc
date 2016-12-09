@@ -17,7 +17,7 @@
 #define CONSOLE_INCLUDED
 
 #include <SDL/SDL.h>
-#include "libconsole/CON_console.h"
+#include "../libconsole/CON_console.h"
 
 
 

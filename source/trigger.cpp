@@ -13,8 +13,8 @@
 
 
 
-#include "config.h"
-#include "trigger.h"
+#include "headers/config.h"
+#include "headers/trigger.h"
 
 
 // konstruktor

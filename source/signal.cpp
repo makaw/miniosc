@@ -18,8 +18,8 @@
 #include <RtAudio.h>
 #include <SDL/SDL.h>
 
-#include "config.h"
-#include "gui.h"
+#include "headers/config.h"
+#include "headers/gui.h"
 
 
 

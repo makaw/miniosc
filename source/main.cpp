@@ -15,14 +15,14 @@
 #include <SDL/SDL.h>
 #include <SDL_image.h>
 
-#include "graphics.h"
-#include "display.h"
-#include "gui.h"
-#include "sig_buffer.h"
-#include "config.h"
-#include "signal.h"
-#include "spectrum.h"
-#include "info.h"
+#include "headers/graphics.h"
+#include "headers/display.h"
+#include "headers/gui.h"
+#include "headers/sig_buffer.h"
+#include "headers/config.h"
+#include "headers/signal.h"
+#include "headers/spectrum.h"
+#include "headers/info.h"
 
 
 // uniwersalne Sleep()

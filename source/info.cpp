@@ -17,10 +17,10 @@
 #include <vector>
 #include <iomanip>
 
-#include "gui.h"
-#include "graphics.h"
-#include "info.h"
-#include "signal.h"
+#include "headers/gui.h"
+#include "headers/graphics.h"
+#include "headers/info.h"
+#include "headers/signal.h"
 
 
 
@@ -86,9 +86,10 @@ void info_about() {
   s.push_back("");
   oss << "  Autor: M.Kawecki 2015/16,  wersja: " << VERSION << ", licencja MIT";
   s.push_back(oss.str().c_str());
+  s.push_back("");
   s.push_back(" • libconsole_SDL 1 (© G.Banuk)");
   s.push_back(" • FFTW3, RtAudio, SDL");
-  prepare_screen("images/splash.png", info_text_content, 30, 115, s, true);
+  prepare_screen("images/splash.png", info_text_content, 30, 100, s, true);
 
 
 }

@@ -44,19 +44,19 @@
 			<Add directory="/usr/local/lib/" />
 		</Linker>
 		<Unit filename="config.cpp" />
-		<Unit filename="config.h" />
+		<Unit filename="headers/config.h" />
 		<Unit filename="console.cpp" />
-		<Unit filename="console.h" />
-		<Unit filename="cursors.h" />
+		<Unit filename="headers/console.h" />
+		<Unit filename="headers/cursors.h" />
 		<Unit filename="display.cpp" />
-		<Unit filename="display.h" />
+		<Unit filename="headers/display.h" />
 		<Unit filename="graphics.cpp" />
-		<Unit filename="graphics.h" />
+		<Unit filename="headers/graphics.h" />
 		<Unit filename="gui.cpp" />
-		<Unit filename="gui.h" />
-		<Unit filename="gui_coords.h" />
+		<Unit filename="headers/gui.h" />
+		<Unit filename="headers/gui_coords.h" />
 		<Unit filename="info.cpp" />
-		<Unit filename="info.h" />
+		<Unit filename="headers/info.h" />
 		<Unit filename="libconsole/CON_console.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -74,15 +74,15 @@
 		<Unit filename="libconsole/internal.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="sig_buffer.cpp" />
-		<Unit filename="sig_buffer.h" />
+		<Unit filename="headers/sig_buffer.h" />
 		<Unit filename="signal.cpp" />
-		<Unit filename="signal.h" />
+		<Unit filename="headers/signal.h" />
 		<Unit filename="spectrum.cpp" />
-		<Unit filename="spectrum.h" />
+		<Unit filename="headers/spectrum.h" />
 		<Unit filename="trigger.cpp" />
-		<Unit filename="trigger.h" />
+		<Unit filename="headers/trigger.h" />
 		<Unit filename="uistate.cpp" />
-		<Unit filename="uistate.h" />
+		<Unit filename="headers/uistate.h" />
 		<Extensions>
 			<envvars />
 			<code_completion />

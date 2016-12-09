@@ -17,9 +17,9 @@
 #include <cmath>
 #include <fftw3.h>
 
-#include "spectrum.h"
-#include "signal.h"
-#include "gui.h"
+#include "headers/spectrum.h"
+#include "headers/signal.h"
+#include "headers/gui.h"
 
 
 

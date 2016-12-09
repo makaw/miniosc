@@ -17,13 +17,13 @@
 #include <iomanip>
 #include "libconsole/CON_console.h"
 
-#include "console.h"
-#include "gui.h"
-#include "gui_coords.h"
-#include "display.h"
-#include "graphics.h"
-#include "signal.h"
-#include "config.h"
+#include "headers/console.h"
+#include "headers/gui.h"
+#include "headers/gui_coords.h"
+#include "headers/display.h"
+#include "headers/graphics.h"
+#include "headers/signal.h"
+#include "headers/config.h"
 
 
 // uniwersalne Sleep()

@@ -18,8 +18,8 @@
 #include <SDL_ttf.h>
 #include <SDL_image.h>
 
-#include "cursors.h"
-#include "gui.h"
+#include "headers/cursors.h"
+#include "headers/gui.h"
 
 
 

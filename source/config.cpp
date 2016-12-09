@@ -11,7 +11,7 @@
  *****************************************************************************/
 
 
-#include "config.h"
+#include "headers/config.h"
 
 
 using namespace std;

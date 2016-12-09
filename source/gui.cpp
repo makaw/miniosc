@@ -21,13 +21,13 @@
 #include <iostream>
 #include <iomanip>
 
-#include "config.h"
-#include "gui_coords.h"
-#include "graphics.h"
-#include "display.h"
-#include "gui.h"
-#include "info.h"
-#include "spectrum.h"
+#include "headers/config.h"
+#include "headers/gui_coords.h"
+#include "headers/graphics.h"
+#include "headers/display.h"
+#include "headers/gui.h"
+#include "headers/info.h"
+#include "headers/spectrum.h"
 
 
 using namespace std;

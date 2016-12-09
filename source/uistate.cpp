@@ -20,12 +20,12 @@
 #include <iostream>
 #include <iomanip>
 
-#include "uistate.h"
-#include "gui.h"
-#include "gui_coords.h"
-#include "spectrum.h"
-#include "graphics.h"
-#include "display.h"
+#include "headers/uistate.h"
+#include "headers/gui.h"
+#include "headers/gui_coords.h"
+#include "headers/spectrum.h"
+#include "headers/graphics.h"
+#include "headers/display.h"
 
 
 
