@@ -14,7 +14,7 @@ WINDRES = windres.exe
 INC = 
 CFLAGS = -Wall `sdl-config --cflags`
 RESINC = 
-LIBDIR = 
+LIBDIR = -L\\usr\\lib\\i386-linux-gnu\ -L\\usr\\lib\ -L\\usr\\local\\lib\
 LIB = 
 LDFLAGS = -lmingw32 -mwindows -lSDLmain -lSDL -lrtaudio -lm -lSDL_image -lSDL_ttf -lfftw3 -D__WINDOWS_DS__ -lole32 -lwinmm -ldsound
 
@@ -40,9 +40,9 @@ OBJDIR_RELEASE = obj\\Release
 DEP_RELEASE = 
 OUT_RELEASE = bin\\Release\\MiniOSC.exe
 
-OBJ_DEBUG = $(OBJDIR_DEBUG)\\uistate.o $(OBJDIR_DEBUG)\\trigger.o $(OBJDIR_DEBUG)\\spectrum.o $(OBJDIR_DEBUG)\\signal.o $(OBJDIR_DEBUG)\\sig_buffer.o $(OBJDIR_DEBUG)\\main.o $(OBJDIR_DEBUG)\\info.o $(OBJDIR_DEBUG)\\gui.o $(OBJDIR_DEBUG)\\graphics.o $(OBJDIR_DEBUG)\\display.o $(OBJDIR_DEBUG)\\console.o $(OBJDIR_DEBUG)\\config.o
+OBJ_DEBUG = $(OBJDIR_DEBUG)\\uistate.o $(OBJDIR_DEBUG)\\trigger.o $(OBJDIR_DEBUG)\\spectrum.o $(OBJDIR_DEBUG)\\signal.o $(OBJDIR_DEBUG)\\sig_buffer.o $(OBJDIR_DEBUG)\\main.o $(OBJDIR_DEBUG)\\libconsole\\internal.o $(OBJDIR_DEBUG)\\libconsole\\DT_drawtext.o $(OBJDIR_DEBUG)\\libconsole\\CON_consolecommands.o $(OBJDIR_DEBUG)\\libconsole\\CON_console.o $(OBJDIR_DEBUG)\\info.o $(OBJDIR_DEBUG)\\gui.o $(OBJDIR_DEBUG)\\graphics.o $(OBJDIR_DEBUG)\\display.o $(OBJDIR_DEBUG)\\console.o $(OBJDIR_DEBUG)\\config.o
 
-OBJ_RELEASE = $(OBJDIR_RELEASE)\\uistate.o $(OBJDIR_RELEASE)\\trigger.o $(OBJDIR_RELEASE)\\spectrum.o $(OBJDIR_RELEASE)\\signal.o $(OBJDIR_RELEASE)\\sig_buffer.o $(OBJDIR_RELEASE)\\main.o $(OBJDIR_RELEASE)\\info.o $(OBJDIR_RELEASE)\\gui.o $(OBJDIR_RELEASE)\\graphics.o $(OBJDIR_RELEASE)\\display.o $(OBJDIR_RELEASE)\\console.o $(OBJDIR_RELEASE)\\config.o
+OBJ_RELEASE = $(OBJDIR_RELEASE)\\uistate.o $(OBJDIR_RELEASE)\\trigger.o $(OBJDIR_RELEASE)\\spectrum.o $(OBJDIR_RELEASE)\\signal.o $(OBJDIR_RELEASE)\\sig_buffer.o $(OBJDIR_RELEASE)\\main.o $(OBJDIR_RELEASE)\\libconsole\\internal.o $(OBJDIR_RELEASE)\\libconsole\\DT_drawtext.o $(OBJDIR_RELEASE)\\libconsole\\CON_consolecommands.o $(OBJDIR_RELEASE)\\libconsole\\CON_console.o $(OBJDIR_RELEASE)\\info.o $(OBJDIR_RELEASE)\\gui.o $(OBJDIR_RELEASE)\\graphics.o $(OBJDIR_RELEASE)\\display.o $(OBJDIR_RELEASE)\\console.o $(OBJDIR_RELEASE)\\config.o
 
 all: debug release
 
@@ -51,6 +51,7 @@ clean: clean_debug clean_release
 before_debug: 
 	cmd /c if not exist bin\\Debug md bin\\Debug
 	cmd /c if not exist $(OBJDIR_DEBUG) md $(OBJDIR_DEBUG)
+	cmd /c if not exist $(OBJDIR_DEBUG)\\libconsole md $(OBJDIR_DEBUG)\\libconsole
 
 after_debug: 
 
@@ -77,6 +78,18 @@ $(OBJDIR_DEBUG)\\sig_buffer.o: sig_buffer.cpp
 $(OBJDIR_DEBUG)\\main.o: main.cpp
 	$(CXX) $(CFLAGS_DEBUG) $(INC_DEBUG) -c main.cpp -o $(OBJDIR_DEBUG)\\main.o
 
+$(OBJDIR_DEBUG)\\libconsole\\internal.o: libconsole\\internal.c
+	$(CC) $(CFLAGS_DEBUG) $(INC_DEBUG) -c libconsole\\internal.c -o $(OBJDIR_DEBUG)\\libconsole\\internal.o
+
+$(OBJDIR_DEBUG)\\libconsole\\DT_drawtext.o: libconsole\\DT_drawtext.c
+	$(CC) $(CFLAGS_DEBUG) $(INC_DEBUG) -c libconsole\\DT_drawtext.c -o $(OBJDIR_DEBUG)\\libconsole\\DT_drawtext.o
+
+$(OBJDIR_DEBUG)\\libconsole\\CON_consolecommands.o: libconsole\\CON_consolecommands.c
+	$(CC) $(CFLAGS_DEBUG) $(INC_DEBUG) -c libconsole\\CON_consolecommands.c -o $(OBJDIR_DEBUG)\\libconsole\\CON_consolecommands.o
+
+$(OBJDIR_DEBUG)\\libconsole\\CON_console.o: libconsole\\CON_console.c
+	$(CC) $(CFLAGS_DEBUG) $(INC_DEBUG) -c libconsole\\CON_console.c -o $(OBJDIR_DEBUG)\\libconsole\\CON_console.o
+
 $(OBJDIR_DEBUG)\\info.o: info.cpp
 	$(CXX) $(CFLAGS_DEBUG) $(INC_DEBUG) -c info.cpp -o $(OBJDIR_DEBUG)\\info.o
 
@@ -99,10 +112,12 @@ clean_debug:
 	cmd /c del /f $(OBJ_DEBUG) $(OUT_DEBUG)
 	cmd /c rd bin\\Debug
 	cmd /c rd $(OBJDIR_DEBUG)
+	cmd /c rd $(OBJDIR_DEBUG)\\libconsole
 
 before_release: 
 	cmd /c if not exist bin\\Release md bin\\Release
 	cmd /c if not exist $(OBJDIR_RELEASE) md $(OBJDIR_RELEASE)
+	cmd /c if not exist $(OBJDIR_RELEASE)\\libconsole md $(OBJDIR_RELEASE)\\libconsole
 
 after_release: 
 
@@ -129,6 +144,18 @@ $(OBJDIR_RELEASE)\\sig_buffer.o: sig_buffer.cpp
 $(OBJDIR_RELEASE)\\main.o: main.cpp
 	$(CXX) $(CFLAGS_RELEASE) $(INC_RELEASE) -c main.cpp -o $(OBJDIR_RELEASE)\\main.o
 
+$(OBJDIR_RELEASE)\\libconsole\\internal.o: libconsole\\internal.c
+	$(CC) $(CFLAGS_RELEASE) $(INC_RELEASE) -c libconsole\\internal.c -o $(OBJDIR_RELEASE)\\libconsole\\internal.o
+
+$(OBJDIR_RELEASE)\\libconsole\\DT_drawtext.o: libconsole\\DT_drawtext.c
+	$(CC) $(CFLAGS_RELEASE) $(INC_RELEASE) -c libconsole\\DT_drawtext.c -o $(OBJDIR_RELEASE)\\libconsole\\DT_drawtext.o
+
+$(OBJDIR_RELEASE)\\libconsole\\CON_consolecommands.o: libconsole\\CON_consolecommands.c
+	$(CC) $(CFLAGS_RELEASE) $(INC_RELEASE) -c libconsole\\CON_consolecommands.c -o $(OBJDIR_RELEASE)\\libconsole\\CON_consolecommands.o
+
+$(OBJDIR_RELEASE)\\libconsole\\CON_console.o: libconsole\\CON_console.c
+	$(CC) $(CFLAGS_RELEASE) $(INC_RELEASE) -c libconsole\\CON_console.c -o $(OBJDIR_RELEASE)\\libconsole\\CON_console.o
+
 $(OBJDIR_RELEASE)\\info.o: info.cpp
 	$(CXX) $(CFLAGS_RELEASE) $(INC_RELEASE) -c info.cpp -o $(OBJDIR_RELEASE)\\info.o
 
@@ -151,6 +178,7 @@ clean_release:
 	cmd /c del /f $(OBJ_RELEASE) $(OUT_RELEASE)
 	cmd /c rd bin\\Release
 	cmd /c rd $(OBJDIR_RELEASE)
+	cmd /c rd $(OBJDIR_RELEASE)\\libconsole
 
 .PHONY: before_debug after_debug clean_debug before_release after_release clean_release
 
