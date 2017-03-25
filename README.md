@@ -1,9 +1,9 @@
 # MiniOSC
-Prosty wirtualny oscyloskop pobierający sygnał z dwóch kanałów wejścia mikrofonowego karty dźwiękowej. 
+Simple 2-channel virtual oscilloscope, getting a signal from a soundcard.
 
-Zawarta biblioteka: libconsole_SDL 1 (&copy; Garrett Banuk)
+Included library: libconsole_SDL 1 (&copy; Garrett Banuk)
 
-Linkowane biblioteki: RtAudio (pobieranie sygnału), FFTW3 (szybka transformata Fouriera), SDL (interfejs graficzny)
+Linked libraries: RtAudio (signal), FFTW3 (fast Fourier transform), SDL (GUI)
 
 
 ----------
@@ -16,4 +16,11 @@ Linkowane biblioteki: RtAudio (pobieranie sygnału), FFTW3 (szybka transformata 
 
 ----------
 
+
+# MiniOSC
+Prosty wirtualny oscyloskop pobierający sygnał z dwóch kanałów wejścia mikrofonowego karty dźwiękowej. 
+
+Zawarta biblioteka: libconsole_SDL 1 (&copy; Garrett Banuk)
+
+Linkowane biblioteki: RtAudio (pobieranie sygnału), FFTW3 (szybka transformata Fouriera), SDL (interfejs graficzny)
 
